@@ -1,2 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	export let data: any;
+</script>
+
+<div>
+{console.log(data)}
+			{#each data.albums as track, i}
+				<tr>
+					<td>{i + 1}</td>
+					<td>{track.trackName}</td>
+					<td>{Math.floor(track.trackMs / 1000)} s</td>
+				</tr>
+			{/each}
+
+</div>
